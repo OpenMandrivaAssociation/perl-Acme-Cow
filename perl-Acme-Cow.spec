@@ -11,6 +11,7 @@ License:	GPL or Artistic
 Group:		Development/Perl
 Source:		http://www.nog.net/~tony/warez/%{module}-%{version}.tar.bz2
 Url:		http://www.nog.net/~tony/warez/cowsay.shtml
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 %if %{mdkversion} < 1010
 Buildrequires:	perl-devel
 %endif
