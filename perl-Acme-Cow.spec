@@ -1,7 +1,7 @@
 %define module	Acme-Cow
 %define name	perl-%{module}
 %define version 0.1
-%define release %mkrel 8
+%define release %mkrel 10
 
 Name:		%{name}
 Version:	%{version}
