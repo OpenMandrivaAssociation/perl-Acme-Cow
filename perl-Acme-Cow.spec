@@ -1,22 +1,24 @@
-%define module	Acme-Cow
-%define name	perl-%{module}
-%define version 0.1
-%define release %mkrel 11
+%define upstream_name	 Acme-Cow
+%define upstream_version 0.1
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	A configurable speaking/thinking Cow
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Source:		http://www.nog.net/~tony/warez/%{module}-%{version}.tar.bz2
 Url:		http://www.nog.net/~tony/warez/cowsay.shtml
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+Source0:	http://www.nog.net/~tony/warez/%{upstream_name}-%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 Buildrequires:	perl-devel
 %endif
 Buildrequires:  perl(Text::Template)
+
 Buildarch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
+
 conflicts:	cowsay
 
 %description
@@ -29,7 +31,7 @@ module that does all the work behind the new version of cow{say,think}
 loquactious cattle into any program you want, quickly and easily.
 
 %prep
-%setup -n %{module}-%{version}
+%setup -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -40,7 +42,7 @@ rm -rf %{buildroot}
 %makeinstall_std
 
 %check
-make test
+%make test
 
 %clean 
 rm -rf %{buildroot}
@@ -51,6 +53,3 @@ rm -rf %{buildroot}
 %{_bindir}/*
 %{perl_vendorlib}/Acme*
 %{_mandir}/*/*
-
-
-
