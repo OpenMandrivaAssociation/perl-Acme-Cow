@@ -8,7 +8,7 @@ Release:	5
 Summary:	A configurable speaking/thinking Cow
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://www.nog.net/~tony/warez/cowsay.shtml
+Url:		https://www.nog.net/~tony/warez/cowsay.shtml
 Source0:	http://www.nog.net/~tony/warez/%{upstream_name}-%{upstream_version}.tar.bz2
 
 BuildRequires:	perl-devel
