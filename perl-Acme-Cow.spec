@@ -11,6 +11,7 @@ Group:		Development/Perl
 Url:		https://www.nog.net/~tony/warez/cowsay.shtml
 Source0:	http://www.nog.net/~tony/warez/%{upstream_name}-%{upstream_version}.tar.bz2
 
+BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires:	perl(Text::Template)
 
