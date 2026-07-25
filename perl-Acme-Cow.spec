@@ -1,15 +1,15 @@
 %define upstream_name	 Acme-Cow
-%define upstream_version 0.1
+%define upstream_version v0.2.1
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	A configurable speaking/thinking Cow
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://www.nog.net/~tony/warez/cowsay.shtml
-Source0:	http://www.nog.net/~tony/warez/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:	https://cpan.metacpan.org/authors/id/H/HA/HADFL/Acme-Cow-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
